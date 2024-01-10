@@ -32,16 +32,11 @@ export default function Home() {
             console.log(ev.target.files[0]);
 
             setFile(ev.target.files[0]);
-            // const bytes = await ev.target.files[0].arrayBuffer();
-
-            // console.log(bytes);
-            // console.log(Buffer.from(bytes));
 
             const readImage = new FileReader();
             readImage.readAsDataURL(ev.target.files[0]);
             readImage.onload = (ev) => {
               if (ev.target) {
-                // console.log(ev.target.result);
                 setImage(ev.target.result);
               }
             };
