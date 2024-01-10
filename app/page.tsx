@@ -45,7 +45,14 @@ export default function Home() {
       />
       <button>Send</button>
 
-      {image && <img src={image} width="50%" alt="" />}
+      {image && (
+        <img
+          //  className="rounded-lg"
+          src={image}
+          width="50%"
+          alt=""
+        />
+      )}
     </form>
   );
 }
