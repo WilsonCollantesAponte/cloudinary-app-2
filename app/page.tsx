@@ -14,16 +14,10 @@ export default function Home() {
 
         if (!file) return alert("Nada seleccionado");
 
-        // const formData = new FormData();
-        // formData.append("image", file);
-
         const response = await fetch("/api", {
           method: "POST",
           body: JSON.stringify({ image }),
         });
-        // .then((r) => r.json())
-        // .then((r) => console.log(r));
-        // response.json();
         const data = await response.json();
         console.log(data);
       }}
@@ -31,8 +25,8 @@ export default function Home() {
       <div>Cloudinary - n</div>
       <input
         type="file"
-        // accept="image/*"
-        // multiple
+        accept="image/*"
+        multiple
         onChange={(ev) => {
           if (ev.target.files?.length) {
             console.log(ev.target.files[0]);
